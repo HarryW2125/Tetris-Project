@@ -1,5 +1,5 @@
 #pragma once
-#include "block.cpp"
+#include "block.h"
 #include "blocktypes.cpp"
 #include "grid.h"
 class Game 
