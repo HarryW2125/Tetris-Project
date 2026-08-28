@@ -9,6 +9,8 @@ public:
     int id;
     std::map<int,std::vector<Position>> cells;
     void Draw();
+    void Move(int rows, int columns);
+    std::vector<Position> GetCellPositions();
 
 
 private:
@@ -16,4 +18,6 @@ private:
     int rotationState;
     std::vector<Color> colors;
     std::vector<Color> GetCellColors();
+    int rowOffset;
+    int columnOffset;
 };
