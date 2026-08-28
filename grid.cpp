@@ -21,10 +21,12 @@ std::vector<Color> Grid::GetCellColours(){
     return {DARKGRAY,GREEN,RED,ORANGE,YELLOW,PURPLE,SKYBLUE,BLUE};
 }
 
+// Draws grid
 void Grid::Draw(){
     for (int row = 0;row<rowNum; row++){
         for (int column = 0; column < colNum; column++){
             int cellVal = grid[row][column];
+            DrawRectangle(column * cellSize+1, row * cellSize+1,cellSize-1,cellSize-1,colors[cellVal]);
             
         }
     }
