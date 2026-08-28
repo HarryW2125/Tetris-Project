@@ -65,6 +65,7 @@ void Game::MoveBlockDown(){
     currentBlock.Move(1,0);
     if (IsBlockOut()){
     currentBlock.Move(-1,0);
+    LockCurrBlock();
     }
 }
 
@@ -82,4 +83,13 @@ void Game::RotateBlock(){
     if (IsBlockOut()){
         currentBlock.UndoRotate();
     }
+}
+
+void Game::LockCurrBlock(){
+    std::vector<Position> tiles = currentBlock.GetCellPositions();
+    for (Position tile:tiles){
+        grid.grid[tile.row][tile.column] = currentBlock.id;
+    }
+    currentBlock = nextBlock;
+    nextBlock = GetRandomBlock();
 }

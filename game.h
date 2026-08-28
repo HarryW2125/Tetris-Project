@@ -16,6 +16,7 @@ class Game
     private:
     bool IsBlockOut();
     void RotateBlock();
+    void LockCurrBlock();
     std::vector<Block> blocks;
     std::vector<Block> GetAllBlocks();
     Block currentBlock;
