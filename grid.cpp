@@ -5,7 +5,7 @@ Grid::Grid(){
     colNum = 10;
     cellSize = 30;
     Initialize();
-    colors = GetCellColours();
+    colors = GetCellColors();
 }
 
 // Initialises grid with zeros
@@ -17,7 +17,7 @@ void Grid::Initialize(){
     }
 }
 
-std::vector<Color> Grid::GetCellColours(){
+std::vector<Color> Grid::GetCellColors(){
     return {DARKGRAY,GREEN,RED,ORANGE,YELLOW,PURPLE,SKYBLUE,BLUE};
 }
 
