@@ -55,3 +55,34 @@ bool Grid::IsRowComplete(int row){
 
     } return true;
 }
+
+void Grid::ClearRow(int row){
+    for (int column = 0; column <colNum;column++) {
+        grid[row][column] == 0;
+    }
+    
+}
+
+void Grid::ShiftRow(int row, int numOfRows){
+        for (int column = 0; column <colNum;column++) {
+        grid[row+numOfRows][column] = grid[row][column];
+        grid[row][column] = 0;
+    }
+
+}
+
+int Grid::CheckAllRows(){
+    int completeRows = 0;
+
+    for(int row = rowNum -1; row>= 0; row--){
+        if (IsRowComplete(row)) {
+            ClearRow(row);
+            completeRows ++;
+        }
+        else if (completeRows >0){
+            ShiftRow(row, completeRows);
+        }
+    }
+
+    return completeRows;
+}

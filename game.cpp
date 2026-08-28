@@ -92,6 +92,7 @@ void Game::LockCurrBlock(){
     }
     currentBlock = nextBlock;
     nextBlock = GetRandomBlock();
+    grid.CheckAllRows();
 }
 
 
