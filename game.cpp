@@ -79,4 +79,7 @@ bool Game::IsBlockOut(){
 
 void Game::RotateBlock(){
     currentBlock.Rotate();
+    if (IsBlockOut()){
+        currentBlock.UndoRotate();
+    }
 }
