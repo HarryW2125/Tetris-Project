@@ -39,3 +39,19 @@ bool Grid::IsOutOfBounds(int row, int column){
     }
     return true;
 }
+
+bool Grid:: IsCellEmpty(int row, int column){
+    if(grid[row][column]== 0) {
+        return true;
+    }
+        return false;
+}
+
+bool Grid::IsRowComplete(int row){
+    for (int column = 0; column <colNum;column++) {
+        if (grid[row][column] == 0){
+            return false;
+        }
+
+    } return true;
+}
