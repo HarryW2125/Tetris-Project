@@ -6,6 +6,7 @@ Game::Game()
     blocks = GetAllBlocks();
     currentBlock = GetRandomBlock();
     nextBlock = GetRandomBlock();
+    gameOver = false;
 };
 
 Block Game::GetRandomBlock(){
@@ -27,10 +28,15 @@ void Game::Draw(){
     grid.Draw();
     currentBlock.Draw();
 
+
 }
 
 void Game::HandleInp(){
     int keyPressed = GetKeyPressed();
+    if(gameOver && keyPressed !=0){
+        gameOver = false;
+        resetGame();
+    }
     switch(keyPressed){
         case KEY_LEFT:
             MoveBlockLeft();
@@ -48,25 +54,28 @@ void Game::HandleInp(){
 }
 
 void Game::MoveBlockLeft(){
+    if(!gameOver){
     currentBlock.Move(0,-1);
     if (IsBlockOut() || BlockFits() == false){
         currentBlock.Move(0,1);
-    }
+    }}
 }
 
 void Game::MoveBlockRight(){
+    if(!gameOver){
     currentBlock.Move(0,1);        
     if (IsBlockOut() || BlockFits() == false){
         currentBlock.Move(0,-1);
-    }
+    }}
 }
 
 void Game::MoveBlockDown(){
+    if(!gameOver){
     currentBlock.Move(1,0);
     if (IsBlockOut() || BlockFits() == false){
     currentBlock.Move(-1,0);
     LockCurrBlock();
-    }
+    }}
 }
 
 bool Game::IsBlockOut(){
@@ -91,6 +100,10 @@ void Game::LockCurrBlock(){
         grid.grid[tile.row][tile.column] = currentBlock.id;
     }
     currentBlock = nextBlock;
+    if(BlockFits() == false){
+        gameOver = true;
+
+    }
     nextBlock = GetRandomBlock();
     grid.CheckAllRows();
 }
@@ -103,4 +116,11 @@ bool Game::BlockFits(){
             return false;
         }
     } return true;
+}
+
+void Game::resetGame(){
+    grid.Initialize();
+    blocks = GetAllBlocks();
+    currentBlock = GetRandomBlock();
+    nextBlock = GetRandomBlock();
 }

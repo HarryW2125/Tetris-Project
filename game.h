@@ -7,6 +7,7 @@ class Game
     public:
     Game();
     Grid grid;
+    bool gameOver;
     Block GetRandomBlock();
     void Draw();
     void HandleInp();
@@ -14,12 +15,13 @@ class Game
     void MoveBlockRight();
     void MoveBlockDown();
     private:
-    bool IsBlockOut();
-    void RotateBlock();
-    void LockCurrBlock();
-    bool BlockFits();
     std::vector<Block> blocks;
     std::vector<Block> GetAllBlocks();
     Block currentBlock;
     Block nextBlock;
+    bool IsBlockOut();
+    void RotateBlock();
+    void LockCurrBlock();
+    bool BlockFits();
+    void resetGame();
 };
