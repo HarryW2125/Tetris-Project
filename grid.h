@@ -8,6 +8,7 @@ class Grid{
         Grid();
         void Initialize();
         void Draw();
+        bool IsOutOfBounds(int row, int column);
         int grid[20][10];
 
     private:

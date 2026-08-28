@@ -9,7 +9,12 @@ class Game
     Grid grid;
     Block GetRandomBlock();
     void Draw();
+    void HandleInp();
+    void MoveBlockLeft();
+    void MoveBlockRight();
+    void MoveBlockDown();
     private:
+    bool IsBlockOut();
     std::vector<Block> blocks;
     std::vector<Block> GetAllBlocks();
     Block currentBlock;

@@ -1,4 +1,5 @@
 #include "grid.h"
+#include "block.h"
 
 Grid::Grid(){
     rowNum = 20;
@@ -30,4 +31,11 @@ void Grid::Draw(){
             
         }
     }
+}
+
+bool Grid::IsOutOfBounds(int row, int column){
+    if (row >= 0 && row < rowNum && column >= 0 && column < colNum) {
+        return false;
+    }
+    return true;
 }

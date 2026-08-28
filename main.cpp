@@ -8,6 +8,7 @@ int main() {
     
 
     while(WindowShouldClose() == false){
+        game.HandleInp();
         BeginDrawing();
         ClearBackground(DARKBLUE);
         game.Draw();
