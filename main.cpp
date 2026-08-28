@@ -6,7 +6,8 @@ int main() {
     InitWindow(300,600, "Tetris");
     SetTargetFPS(60);
     Grid grid = Grid();
-    LBlock block = LBlock();
+    TBlock block = TBlock();
+    
 
     while(WindowShouldClose() == false){
         BeginDrawing();
