@@ -4,14 +4,13 @@
 int main() {
     InitWindow(300,600, "Tetris");
     SetTargetFPS(60);
-    
+    Game game = Game();
     
 
     while(WindowShouldClose() == false){
         BeginDrawing();
         ClearBackground(DARKBLUE);
-        grid.Draw();
-        block.Draw();
+        game.Draw();
         EndDrawing();
     }
     CloseWindow();

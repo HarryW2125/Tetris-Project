@@ -1,4 +1,4 @@
-#pragma one
+#pragma once
 #include "block.cpp"
 #include "blocktypes.cpp"
 #include "grid.h"
