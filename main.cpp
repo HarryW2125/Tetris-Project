@@ -4,8 +4,9 @@ int main() {
     InitWindow(300,600, "Tetris");
     SetTargetFPS(60);
 
-    while(WindowShouldClose == false){
+    while(WindowShouldClose() == false){
         BeginDrawing();
+        ClearBackground(DARKBLUE);
         
         EndDrawing();
     }
