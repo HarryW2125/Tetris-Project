@@ -1,12 +1,10 @@
 #include <raylib.h>
-#include "grid.h"
-#include "blocktypes.cpp"
+#include "game.h"
 
 int main() {
     InitWindow(300,600, "Tetris");
     SetTargetFPS(60);
-    Grid grid = Grid();
-    TBlock block = TBlock();
+    
     
 
     while(WindowShouldClose() == false){
