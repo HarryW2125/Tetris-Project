@@ -41,6 +41,9 @@ void Game::HandleInp(){
         case KEY_DOWN:
             MoveBlockDown();
             break;
+        case KEY_UP:
+        RotateBlock();
+        break;
     }
 }
 
@@ -72,4 +75,8 @@ bool Game::IsBlockOut(){
             return true;
         }
     } return false;
+}
+
+void Game::RotateBlock(){
+    currentBlock.Rotate();
 }
