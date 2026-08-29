@@ -1,5 +1,6 @@
 #include <raylib.h>
 #include "game.h"
+#include <iostream>
 
 double lastUpdate = 0;
 
@@ -27,6 +28,10 @@ int main() {
             DrawText("Press any key to restart",300,500,20,BLACK);
         }
         DrawRectangle(320,55,170,60,SKYBLUE);
+
+        char scoreText[10];
+        sprintf(scoreText,"%d", game.score);
+        DrawText(scoreText,380,70,30,BLACK);
         DrawRectangle(320,215,170,180,SKYBLUE);
         if (TimedEventTriggered(0.2)){
             game.MoveBlockDown();

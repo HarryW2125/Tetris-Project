@@ -7,6 +7,7 @@ Game::Game()
     currentBlock = GetRandomBlock();
     nextBlock = GetRandomBlock();
     gameOver = false;
+    score = 0;
 };
 
 Block Game::GetRandomBlock(){
@@ -31,6 +32,27 @@ void Game::Draw(){
 
 }
 
+void Game::updateScore(int lines, int moveDown){
+    switch(lines){
+        case 1:
+            score += 40;
+            break;
+        case 2:
+            score += 100;
+            break;
+        case 3:
+            score +=300;
+            break;
+        case 4:
+            score += 1200;
+            break;
+        default:
+            break;
+
+    }
+    score += moveDown;
+}
+
 void Game::HandleInp(){
     int keyPressed = GetKeyPressed();
     if(gameOver && keyPressed !=0){
@@ -46,6 +68,7 @@ void Game::HandleInp(){
             break;
         case KEY_DOWN:
             MoveBlockDown();
+            updateScore(0,1);
             break;
         case KEY_UP:
         RotateBlock();
@@ -105,7 +128,8 @@ void Game::LockCurrBlock(){
 
     }
     nextBlock = GetRandomBlock();
-    grid.CheckAllRows();
+    int linesCleared =grid.CheckAllRows();
+    updateScore(linesCleared,0);
 }
 
 
@@ -123,4 +147,5 @@ void Game::resetGame(){
     blocks = GetAllBlocks();
     currentBlock = GetRandomBlock();
     nextBlock = GetRandomBlock();
+    score = 0;
 }
