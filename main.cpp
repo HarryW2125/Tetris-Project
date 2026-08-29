@@ -33,6 +33,7 @@ int main() {
         sprintf(scoreText,"%d", game.score);
         DrawText(scoreText,380,70,30,BLACK);
         DrawRectangle(320,215,170,180,SKYBLUE);
+        
         if (TimedEventTriggered(0.2)){
             game.MoveBlockDown();
         }

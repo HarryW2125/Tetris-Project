@@ -8,7 +8,7 @@ public:
     Block();
     int id;
     std::map<int,std::vector<Position>> cells;
-    void Draw();
+    void Draw(int xOffset, int yOffset);
     void Move(int rows, int columns);
     void Rotate();
     void UndoRotate();

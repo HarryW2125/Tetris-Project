@@ -13,10 +13,10 @@ std::vector<Color> Block::GetCellColors(){
     return {DARKGRAY,GREEN,RED,ORANGE,YELLOW,PURPLE,SKYBLUE,BLUE};
 }
 
-void Block::Draw(){
+void Block::Draw(int xOffset,int yOffset){
     std::vector<Position> tiles = GetCellPositions();
     for(Position tile: tiles){
-        DrawRectangle(tile.column * cellSize +11, tile.row* cellSize +11, cellSize -1, cellSize -1, colors[id]);
+        DrawRectangle(tile.column * cellSize + xOffset, tile.row* cellSize + yOffset, cellSize -1, cellSize -1, colors[id]);
     }
 
 }
