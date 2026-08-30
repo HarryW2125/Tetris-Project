@@ -1,6 +1,8 @@
 #include "block.h"
 #include "position.h"
 
+// defines block types, colours and their 4 rotations
+
 class LBlock: public Block{
     public:
         LBlock(){
