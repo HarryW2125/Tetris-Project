@@ -8,6 +8,13 @@ A simple, lightweight version of tetris created exclusively in c++ using the [Ra
 ### Demo Video
 
 
+
+https://github.com/user-attachments/assets/1d4b06b9-9a93-4217-9c3b-ac6327e8c697
+
+
+
+
+
 ## Installation
 
 To run the game, you will need to install the raylib library [here](https://raysan5.itch.io/raylib/download/eyJleHBpcmVzIjoxNzg4MzQwNjQyLCJpZCI6ODUzMzF9%2eloCosciaB3A8YPc6sr%2bDvUz0AQM%3d). This library does include its own IDE which would be sufficient enough for running the game, however for modifiying the code I would recommend a more robust IDE such as Visual Studio Code.  
